@@ -1,0 +1,20 @@
+section {
+  app-sidebar {
+    width: 25%;
+    border-inline-end: 1px solid #dee2e6;
+  }
+  .content.active {
+    width: -webkit-fill-available;
+    height: 1000vh;
+  }
+}
+// .content.active {
+//   display: flex;
+//   justify-content: center;
+//   app-sidebar {
+//     width: 20%;
+//   }
+//   .main-content {
+//     width: 80%;
+//   }
+// }

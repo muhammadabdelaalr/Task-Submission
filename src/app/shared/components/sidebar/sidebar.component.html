@@ -1,0 +1,17 @@
+<section class="d-flex flex-column m-5">
+  <div class="logo d-flex gap-3 align-items-center">
+    <span class="icon"></span>
+    <h2 class="m-0">TaskMinder.</h2>
+  </div>
+  <div class="nav-items mt-5">
+    <div class="sidenav-nav">
+      <a class="sidenav-nav-link" *ngFor="let item of sideNav" [routerLink]="['/']" routerLinkActive="router-link-active" >
+        <i class="sidenav-link-icon" [class]="item.icon"></i>
+        <span class="sidenav-link-text">{{item.text}}</span>
+      </a>
+    </div>
+  </div>
+  <div class="btns">
+    <button class="btn btn-outline-danger">{{'sidebar.logout' | translate}}</button>
+  </div>
+</section>

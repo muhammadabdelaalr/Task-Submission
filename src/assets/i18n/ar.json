@@ -1,0 +1,16 @@
+{
+  "login": {
+    "login": "تسجيل الدخول",
+    "username": "اسم المستخدم",
+    "username-is": "اسم المستخدم ",
+    "password": "كلمة المرور",
+    "password-is": "كلمة المرور ",
+    "required": "مطلوب"
+  },
+  "alert": {
+    "logged-in-successfully": "تم تسجيل الدخول بنجاح",
+    "created-successfully": "تم الانشاء بنجاح",
+    "edited-successfully": "تم التعديل بنجاح",
+    "deleted-successfully": "تم الحذف بنجاح"
+  }
+}

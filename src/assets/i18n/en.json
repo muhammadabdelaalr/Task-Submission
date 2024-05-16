@@ -1,0 +1,16 @@
+{
+  "login": {
+    "login": "Login",
+    "username": "Username",
+    "username-is": "Username is",
+    "password": "Password",
+    "password-is": "Password is",
+    "required": "Required"
+  },
+  "alert": {
+    "logged-in-successfully": "Logged in successfully",
+    "created-successfully": "Created successfully",
+    "edited-successfully": "Edited successfully",
+    "deleted-successfully": "Deleted successfully"
+  }
+}

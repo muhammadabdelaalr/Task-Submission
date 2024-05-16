@@ -1,0 +1,48 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="form-container col-lg-6 col-md-12 mx-auto">
+        <mat-card>
+          <mat-card-content>
+            <div class="title text-center text-capitalize my-3">
+              <h1 class="fw-bold">{{'login.login' | translate}}</h1>
+            </div>
+
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+              <mat-form-field appearance="fill" class="my-2">
+                <mat-label>{{'login.username' | translate}}</mat-label>
+                <input type="text" matInput formControlName="userName" placeholder="Ex. mohamed_abdo">
+                <mat-error *ngIf="loginForm.controls.userName.errors?.['required']">
+                  {{'login.username-is' | translate}} <strong>{{'login.required' | translate}}</strong>
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="my-2">
+                <mat-label>{{'login.password' | translate}}</mat-label>
+                <input [type]="hide ? 'password' : 'text'" formControlName="password" matInput placeholder="**********">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-error *ngIf="loginForm.controls.password.errors?.['required']">
+                  {{'login.password-is' | translate}} <strong>{{'login.required' | translate}}</strong>
+                </mat-error>
+              </mat-form-field>
+
+              <div class="button text-center my-3">
+                <button type="submit" class="btn btn-warning rounded w-100 btn-lg" [disabled]="loginForm.invalid">{{'login.login' | translate}}</button>
+              </div>
+              <!-- <div *ngFor="let alert of alerts">
+                <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg }}</alert>
+              </div> -->
+              <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" [dismissible]="false">{{ alert.msg }}</alert>
+              <!-- <alert *ngIf="showAlert" type="success" [dismissible]="false">
+                <strong>{{'alert.success'}}</strong> {{'alert.logged-in-successfully'}}.
+              </alert> -->
+            </form>
+
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+</section>
