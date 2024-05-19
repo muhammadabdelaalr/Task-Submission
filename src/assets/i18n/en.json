@@ -2,15 +2,60 @@
   "login": {
     "login": "Login",
     "username": "Username",
-    "username-is": "Username is",
+    "usernameIs": "Username is",
     "password": "Password",
-    "password-is": "Password is",
+    "passwordIs": "Password is",
+    "required": "Required"
+  },
+  "header": {
+    "search": "Search",
+    "lang": "English",
+    "notifications": "Notifications",
+    "profile": "Profile"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "calendar": "Calendar",
+    "logout": "Logout"
+  },
+  "tasks": {
+    "tasks": "Tasks",
+    "undo": "Undo",
+    "redo": "Redo",
+    "group": "Group",
+    "filter": "Filter",
+    "newTask": "New Task",
+    "edit": "Edit",
+    "delete": "Delete",
+    "todo": "To do",
+    "inProgress": "In Progress",
+    "done": "Done",
+    "noTasks": "No Tasks"
+  },
+  "dialog": {
+    "newTask":"New Task",
+    "editTask":"Edit Task",
+    "name": "Name",
+    "nameIs": "Name ",
+    "description": "Description",
+    "description-is": "Description ",
+    "status": "Status",
+    "status-is": "Status ",
+    "close": "Close",
+    "save": "Save",
+    "edit": "Edit",
     "required": "Required"
   },
   "alert": {
-    "logged-in-successfully": "Logged in successfully",
-    "created-successfully": "Created successfully",
-    "edited-successfully": "Edited successfully",
-    "deleted-successfully": "Deleted successfully"
+    "loggedInSuccessfully": "Logged in successfully",
+    "createdSuccessfully": "Created successfully",
+    "editedSuccessfully": "Edited successfully",
+    "deletedSuccessfully": "Deleted successfully",
+    "areYouSureDeleteTask": "Are you sure you want to delete this task?",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "ok": "OK"
   }
 }

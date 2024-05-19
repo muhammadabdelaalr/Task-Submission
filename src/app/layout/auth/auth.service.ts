@@ -1,25 +1,22 @@
+import { baseUrl } from './../../shared/core/services/global.service';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Account } from 'src/app/shared/core/services/global.service';
-import { HttpHeaderService } from 'src/app/shared/core/services/http-header.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpHeaderService, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
-  login(form: any) {
-    return this.http.Post(Account.postLogin, form);
+  login(form: any): Observable<any> {
+    return this.http.post<any>(baseUrl+Account.postLogin, form);
   }
 
-  isUserLogin(){
-    if(sessionStorage.getItem('userName')) {
-      return true;
-    } else {
-      return false;
-    }
+  isAuthenticated(): boolean{
+    return !!sessionStorage.getItem('userName');
   }
 
 }

@@ -1,0 +1,17 @@
+section {
+  overflow: auto;
+    height: calc(100vh - 93px - 3rem);
+  .head {
+    .right-head {
+      a {
+        display: flex;
+        cursor: pointer;
+        transition: .4s ease;
+
+        &:hover {
+          color: var(--bs-primary);
+        }
+      }
+    }
+  }
+}

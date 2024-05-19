@@ -1,0 +1,22 @@
+section {
+  transition: .4s ease;
+
+  &:hover {
+    box-shadow: var(--bs-box-shadow);
+  }
+
+  .head {
+    a {
+      color: var(--bs-black);
+      transition: .4s ease;
+      cursor: pointer;
+
+      &:hover:nth-child(1) {
+        color: var(--bs-primary);
+      }
+      &:hover:nth-child(2) {
+        color: var(--bs-danger);
+      }
+    }
+  }
+}

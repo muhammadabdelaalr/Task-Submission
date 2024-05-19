@@ -1,1 +1,24 @@
-<p>header works!</p>
+<section>
+  <div class="container d-flex justify-content-between py-4">
+    <div class="searching d-flex position-relative" [tooltip]="'header.search' | translate" placement="bottom">
+        <input type="text" class="form-control" [(ngModel)]="search" (keyup)="setSearing()" [placeholder]="'header.search' | translate">
+        <div class="icon-search d-flex position-absolute py-2 px-3">
+          <mat-icon>search</mat-icon>
+        </div>
+    </div>
+    <div class="user-section d-flex justify-content-center align-items-center gap-2">
+      <a *ngIf="currentLang === 'ar'" [tooltip]="'header.lang' | translate" placement="bottom" (click)="switchLanguage('en')">
+        <mat-icon>language</mat-icon>
+      </a>
+      <a *ngIf="currentLang === 'en'" [tooltip]="'header.lang' | translate" placement="bottom" (click)="switchLanguage('ar')">
+        <mat-icon>language</mat-icon>
+      </a>
+      <a [tooltip]="'header.notifications' | translate" placement="bottom">
+        <mat-icon>notifications_none</mat-icon>
+      </a>
+      <a [tooltip]="userName" placement="bottom">
+        <img [src]="avatar" alt="avatar" width="44" height="44" class="rounded-circle">
+      </a>
+    </div>
+  </div>
+</section>

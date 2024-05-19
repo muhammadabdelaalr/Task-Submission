@@ -1,0 +1,25 @@
+section {
+  border-bottom: 1px solid #dee2e6;
+  .searching {
+    width: 70%;
+    .icon-search {
+      top: 50%;
+      inset-inline-end: 0;
+      transform: translateY(-50%);
+    }
+  }
+  .user-section {
+    a {
+      color: var(--bs-black);
+      cursor: pointer;
+      mat-icon {
+        transition: .4s ease;
+      }
+      &:hover {
+        mat-icon {
+          color: var(--bs-primary);
+        }
+      }
+    }
+  }
+}

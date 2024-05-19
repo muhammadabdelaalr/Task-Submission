@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,13 +9,31 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   sideNav = [
     {
-      icon: 'fas fa-home',
-      text: 'sidebar.home',
-      link: 'home'
+      icon: 'dashboard',
+      text: 'sidebar.dashboard',
+      link: 'dashboard'
     },
     {
-      icon: 'fas fa-user',
-      text: 'sidebar.profile',
+      icon: 'folder_open',
+      text: 'sidebar.projects',
+      link: 'projects'
+    },
+    {
+      icon: 'list',
+      text: 'sidebar.tasks',
+      link: 'tasks'
+    },
+    {
+      icon: 'event_note',
+      text: 'sidebar.calendar',
+      link: 'calendar'
     }
   ]
+
+  constructor(private router: Router) {}
+
+  logoutFn() {
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
+  }
 }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../auth.service';
+import Swal from 'sweetalert2';
 
 type AlertType = { type: string; msg: string; timeout: number };
 
@@ -28,16 +29,12 @@ export class LoginComponent {
     this.auth.login(this.loginForm.value).subscribe({
       next: (res) => {
         sessionStorage.setItem('userName', res.userName);
-        this.alert = {
-          type: 'success',
-          msg: this.translate.instant('alert.logged-in-successfully'),
-          timeout: 500
-        };
-        // this.alerts.push({
-        //   type: 'success',
-        //   msg: this.translate.instant('alert.logged-in-successfully'),
-        //   timeout: 500
-        // })
+        Swal.fire({
+          icon: 'success',
+          title: this.translate.instant('alert.loggedInSuccessfully'),
+          showConfirmButton: false,
+          timer: 600
+        })
         this.router.navigate(['/']);
       },
       error: (err) => {
@@ -45,12 +42,8 @@ export class LoginComponent {
     })
   }
 
-  onClosed(dismissedAlert: AlertType): void {
-    this.alerts = this.alerts.filter((alert) => alert !== dismissedAlert);
-  }
-
   isUserLogin() {
-    if (this.auth.isUserLogin()) this.router.navigate(['/']);
+    if (this.auth.isAuthenticated()) this.router.navigate(['/']);
   }
 
   ngOnInit(): void {

@@ -1,0 +1,19 @@
+<section class="p-2 bg-light rounded">
+  <div class="head d-flex justify-content-between align-items-center">
+    <div class="image&name d-flex gap-2 align-items-center">
+      <img [src]="task.img" [alt]="task.name" width="44" height="44" class="rounded-circle" [tooltip]="userName">
+      <h3 class="m-0 fw-medium">{{task.name}}</h3>
+    </div>
+    <div class="action d-flex">
+      <a class="d-flex" [tooltip]="'tasks.edit' | translate" (click)="onEdit(task)">
+        <mat-icon>edit-outline</mat-icon>
+      </a>
+      <a class="d-flex" [tooltip]="'tasks.delete' | translate" (click)="onDelete(task.id)">
+        <mat-icon>delete_outline</mat-icon>
+      </a>
+    </div>
+  </div>
+  <div class="body mt-2">
+    <p>{{task.description}}</p>
+  </div>
+</section>

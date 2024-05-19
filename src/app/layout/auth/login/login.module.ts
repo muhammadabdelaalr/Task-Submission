@@ -3,19 +3,34 @@ import { LoginComponent } from "./login.component";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { ReactiveFormsModule } from "@angular/forms";
-import { MatCardModule } from "@angular/material/card";
-import { MatFormFieldModule } from "@angular/material/form-field";
 import { TranslateModule } from "@ngx-translate/core";
+
+// Material
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
-import { SharedModule } from "src/app/shared/shared.module";
+import { MatIconModule } from '@angular/material/icon';
+import { AlertModule } from 'ngx-bootstrap/alert';
+
+const material = [
+  MatAutocompleteModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatIconModule,
+  AlertModule
+];
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    SharedModule,
+    material,
     TranslateModule,
-    RouterModule.forChild([ { path: "", component: LoginComponent } ]),
+    RouterModule.forChild([{ path: "", component: LoginComponent }]),
 
     ReactiveFormsModule,
   ],
@@ -24,4 +39,4 @@ import { SharedModule } from "src/app/shared/shared.module";
     ReactiveFormsModule,
   ],
 })
-export class LoginModule {}
+export class LoginModule { }

@@ -2,15 +2,60 @@
   "login": {
     "login": "تسجيل الدخول",
     "username": "اسم المستخدم",
-    "username-is": "اسم المستخدم ",
+    "usernameIs": "اسم المستخدم ",
     "password": "كلمة المرور",
-    "password-is": "كلمة المرور ",
+    "passwordIs": "كلمة المرور ",
     "required": "مطلوب"
   },
+  "header": {
+    "search": "بحث",
+    "lang": "عربي",
+    "notifications": "الاشعارات",
+    "profile": "الملف الشخصي"
+  },
+  "sidebar": {
+    "dashboard": "لوحة التحكم",
+    "projects": "المشاريع",
+    "tasks": "المهام",
+    "calendar": "التقويم",
+    "logout": "تسجيل الخروج"
+  },
+  "tasks": {
+    "tasks": "المهام",
+    "undo": "تراجع",
+    "redo": "اعادة",
+    "group": "مجموعة",
+    "filter": "تصفية",
+    "newTask": "مهمة جديدة",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "todo": "القيام به",
+    "inProgress": "قيد التنفيذ",
+    "done": "تم",
+    "noTasks": "لا توجد مهام"
+  },
+  "dialog": {
+    "newTask":"مهمة جديدة",
+    "editTask":"تعديل المهمة",
+    "name": "الاسم",
+    "nameIs": "الاسم ",
+    "description": "الوصف",
+    "description-is": "الوصف ",
+    "status": "الحالة",
+    "status-is": "الحالة ",
+    "required": "مطلوب",
+    "save": "حفظ",
+    "edit": "تعديل",
+    "close": "اغلاق"
+  },
   "alert": {
-    "logged-in-successfully": "تم تسجيل الدخول بنجاح",
-    "created-successfully": "تم الانشاء بنجاح",
-    "edited-successfully": "تم التعديل بنجاح",
-    "deleted-successfully": "تم الحذف بنجاح"
+    "loggedInSuccessfully": "تم تسجيل الدخول بنجاح",
+    "createdSuccessfully": "تم الانشاء بنجاح",
+    "editedSuccessfully": "تم التعديل بنجاح",
+    "deletedSuccessfully": "تم الحذف بنجاح",
+    "areYouSureDeleteTask": "هل انت متأكد من حذف المهمة؟",
+    "delete": "حذف",
+    "cancel": "الغاء",
+    "ok": "تم"
   }
 }

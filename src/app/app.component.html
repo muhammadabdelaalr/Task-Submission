@@ -1,4 +1,4 @@
-<section [ngClass]="isUserLogin ? 'd-flex' : ''" [dir]="textDir" id="Appcontainer">
+<section [ngClass]="isUserLogin ? 'd-flex' : ''" [dir]="textDir" id="AppContainer">
   <app-sidebar *ngIf="isUserLogin"></app-sidebar>
   <div class="content" [ngClass]="isUserLogin ? 'active' : ''">
     <app-header *ngIf="isUserLogin"></app-header>

@@ -20,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -29,7 +30,6 @@ import { SharedModule } from './shared/shared.module';
       },
     }),
     SharedModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

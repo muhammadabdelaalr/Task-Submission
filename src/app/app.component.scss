@@ -1,11 +1,10 @@
 section {
   app-sidebar {
-    width: 25%;
+    width: 20rem;
     border-inline-end: 1px solid #dee2e6;
   }
   .content.active {
     width: -webkit-fill-available;
-    height: 1000vh;
   }
 }
 // .content.active {

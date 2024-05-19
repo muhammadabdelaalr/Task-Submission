@@ -44,6 +44,6 @@ export class AppComponent implements OnInit {
   }
 
   get isUserLogin() {
-    return this.auth.isUserLogin();
+    return this.auth.isAuthenticated();
   }
 }

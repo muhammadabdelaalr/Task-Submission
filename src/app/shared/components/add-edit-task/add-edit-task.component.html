@@ -1,0 +1,37 @@
+<section class="py-3">
+  <div mat-dialog-title class="d-flex">
+    <h1 class="m-0 fw-medium">{{(!data ? 'dialog.newTask' : 'dialog.editTask') | translate}}</h1>
+  </div>
+  <div mat-dialog-content class="my-3">
+    <form [formGroup]="taskForm">
+
+      <mat-form-field appearance="fill" class="w-100 my-2">
+        <mat-label>{{'dialog.name' | translate}}</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Ex. task1">
+        <mat-error *ngIf="taskForm.controls?.['name']?.errors?.['required']">
+          {{'dialog.nameIs' | translate}} <strong>{{'dialog.required' | translate}}</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="w-100 my-2">
+        <mat-label>{{'dialog.description' | translate}}</mat-label>
+          <textarea matInput name="description" formControlName="description" cols="30" rows="3"></textarea>
+        <mat-error *ngIf="taskForm.controls?.['description']?.errors?.['required']">
+          {{'dialog.description-is' | translate}} <strong>{{'dialog.required' | translate}}</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="w-100 my-2">
+        <mat-label>{{'dialog.status' | translate}}</mat-label>
+        <mat-select  formControlName="status">
+          <mat-option *ngFor="let status of status$ | async" [value]="status.name">{{'tasks.'+status.name | translate}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="taskForm.controls?.['status']?.errors?.['required']">
+          {{'dialog.status-is' | translate}} <strong>{{'dialog.required' | translate}}</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions class="actions pt-4">
+    <button mat-raised-button [mat-dialog-close]="false">{{'dialog.close' | translate}}</button>
+    <button mat-raised-button color="primary" [disabled]="taskForm.invalid" (click)="onSave()">{{(!data ? 'dialog.save': 'dialog.edit') | translate}}</button>
+  </div>
+</section>

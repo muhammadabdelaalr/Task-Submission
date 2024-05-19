@@ -1,1 +1,92 @@
-<p>tasks works!</p>
+<section class="mt-5">
+  <div class="container">
+    <div class="head d-flex justify-content-between align-items-center gap-2">
+      <div class="title">
+        <h1 class="m-0 fw-medium">{{'tasks.tasks' | translate}}</h1>
+      </div>
+      <div class="right-head d-flex justify-content-between align-items-center gap-3">
+        <a [tooltip]="'tasks.undo' | translate" placement="bottom">
+          <mat-icon>undo</mat-icon>
+        </a>
+        <a [tooltip]="'tasks.redo' | translate" placement="bottom">
+          <mat-icon>redo</mat-icon>
+        </a>
+        <a [tooltip]="'tasks.group' | translate" placement="bottom">
+          <mat-icon>people_outline</mat-icon>
+        </a>
+        <a [tooltip]="'tasks.filter' | translate" placement="bottom">
+          <mat-icon>tune</mat-icon>
+        </a>
+        <button class="btn btn-primary d-flex py-2" (click)="openAddTask()">
+          <span>{{'tasks.newTask' | translate}}</span>
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="body mt-4">
+      <div class="boxs">
+        <div class="row">
+          <!-- todo list -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="box p-3 rounded" [ngStyle]="{'background-color': 'var(--bs-primary-bg-subtle)'}">
+              <div class="head d-flex gap-2 align-items-center pb-3">
+                <span>
+                  <mat-icon>check_box_outline_blank</mat-icon>
+                </span>
+                <h2 class="m-0">{{'tasks.todo' | translate}}</h2>
+              </div>
+              <div class="tasks d-flex flex-column align-items-center gap-2">
+                <div class="task w-100" *ngFor="let task of todo$ | async">
+                  <app-task *ngIf="(todo$ | async)?.length" [task]="task" (editTask)="openEditTask($event)" (deleteTask)="deleteTask($event)"></app-task>
+                </div>
+                <div *ngIf="!(todo$ | async)?.length" class="task bg-white text-danger-emphasis text-center rounded w-100">
+                  <h1 class="m-0 p-2">{{'tasks.noTasks' | translate}}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- in progress list -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="box p-3 rounded" [ngStyle]="{'background-color': 'var(--bs-warning-bg-subtle)'}">
+              <div class="head d-flex gap-2 align-items-center pb-3">
+                <span>
+                  <mat-icon>hourglass_empty</mat-icon>
+                </span>
+                <h2 class="m-0">{{'tasks.inProgress' | translate}}</h2>
+              </div>
+              <div class="tasks d-flex flex-column align-items-center gap-2">
+                <div class="task w-100" *ngFor="let task of inProgress$ | async">
+                  <app-task *ngIf="(inProgress$ | async)?.length" [task]="task" (editTask)="openEditTask($event)" (deleteTask)="deleteTask($event)"></app-task>
+                </div>
+                <div *ngIf="!(inProgress$ | async)?.length" class="task bg-white text-danger-emphasis text-center rounded w-100">
+                  <h1 class="m-0 p-2">{{'tasks.noTasks' | translate}}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- done list -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="box p-3 rounded" [ngStyle]="{'background-color': 'var(--bs-danger-bg-subtle)'}">
+              <div class="head d-flex gap-2 align-items-center pb-3">
+                <span>
+                  <mat-icon>check_box</mat-icon>
+                </span>
+                <h2 class="m-0">{{'tasks.done' | translate}}</h2>
+              </div>
+              <div class="tasks d-flex flex-column align-items-center gap-2">
+                <div class="task w-100" *ngFor="let task of done$ | async">
+                  <app-task *ngIf="(done$ | async)?.length" [task]="task" (editTask)="openEditTask($event)" (deleteTask)="deleteTask($event)"></app-task>
+                </div>
+                <div *ngIf="!(done$ | async)?.length" class="task bg-white text-danger-emphasis text-center rounded w-100">
+                  <h1 class="m-0 p-2">{{'tasks.noTasks' | translate}}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
